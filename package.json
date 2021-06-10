@@ -1,7 +1,7 @@
 {
-  "name": "node-red-contrib-chartjs",
-  "version": "0.5.2",
-  "description": "Node-RED Chart.js node",
+  "name": "node-red-contrib-chartjs3",
+  "version": "0.0.1",
+  "description": "Node-RED Chart.js 3 node",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,11 +12,12 @@
   ],
   "author": "Miguel Salinas",
   "contributors": [
-    "Andres Carmona"
+    "Andres Carmona",
+    "Nan Zhao",
+    "Kathy Camenzind"
   ],
   "license": "Apache License, Version 2.0",
   "dependencies": {
-    "chart.js": "^2.7.3",
     "cors": "^2.8.5",
     "moment": "^2.24.0",
     "serve-static": "^1.13.2",
