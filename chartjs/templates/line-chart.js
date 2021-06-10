@@ -67,7 +67,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             config.options.title.text = red.config.title;
             config.options.scales['xAxes'][0].scaleLabel.labelString = red.config.xaxis;
             config.options.scales['yAxes'][0].scaleLabel.labelString = red.config.yaxis;
-
+            try {
+                let other_options = JSON.parse(red.config.options);
+                Object.entries(other_options).forEach(([key, value]) => config.options[key]=item);
+            }
+            catch(err) {
+                console.log("Error parsing other options for chart:", err);
+            }
             // refresh chart
             chart.update();
         }

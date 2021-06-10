@@ -135,7 +135,7 @@ module.exports = function (RED) {
         updatePath(node, config.path);
 
         // save config channel
-        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis };
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options };
 
         // trigger on flow input
         node.on('input', function (msg) {
@@ -177,7 +177,7 @@ module.exports = function (RED) {
         // update expressJS route and update node path
         updatePath(node, config.path);
 
-        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis };
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options };
 
         // trigger on flow input
         node.on('input', function (msg) {
@@ -219,7 +219,7 @@ module.exports = function (RED) {
         // update expressJS route and update node path
         updatePath(node, config.path);
 
-        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis };
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options };
 
         // trigger on flow input
         node.on('input', function (msg) {
@@ -261,7 +261,7 @@ module.exports = function (RED) {
         // update expressJS route and update node path
         updatePath(node, config.path);
 
-        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis };
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options };
 
         // trigger on flow input
         node.on('input', function (msg) {
@@ -303,7 +303,7 @@ module.exports = function (RED) {
         // update expressJS route and update node path
         updatePath(node, config.path);
 
-        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis };
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options  };
 
         // trigger on flow input
         node.on('input', function (msg) {
@@ -345,7 +345,7 @@ module.exports = function (RED) {
         // update expressJS route and update node path
         updatePath(node, config.path);
 
-        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis };
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options };
 
         // trigger on flow input
         node.on('input', function (msg) {
@@ -387,7 +387,7 @@ module.exports = function (RED) {
         // update expressJS route and update node path
         updatePath(node, config.path);
 
-        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis };
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options };
 
         // trigger on flow input
         node.on('input', function (msg) {
@@ -429,7 +429,7 @@ module.exports = function (RED) {
         // update expressJS route and update node path
         updatePath(node, config.path);
 
-        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis };
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options };
 
         // trigger on flow input
         node.on('input', function (msg) {
