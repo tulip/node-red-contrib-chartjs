@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     socket.on(topic, function(red){
         console.log(red);
 
-        console.log("test")
         // update chart dataset
         if (red.msg !== undefined) {
             if (!Array.isArray(red.msg.payload)) {
@@ -69,10 +68,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             config.options.scales['xAxes'][0].scaleLabel.labelString = red.config.xaxis;
             config.options.scales['yAxes'][0].scaleLabel.labelString = red.config.yaxis;
             try {
-                let other_options = JSON.parse(red.config.options);
-                let new_options = _.merge(config.options, other_options)
-                console.log("new options", new_options)
-                config.options = new_options
+                if(red.config.options){
+                    let other_options = JSON.parse(red.config.options);
+                    let new_options = _.merge(config.options, other_options)
+                    console.log("new options", new_options)
+                    config.options = new_options
+                }
             }
             catch(err) {
                 console.log("Error parsing other options for chart:", err);
