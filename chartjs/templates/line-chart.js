@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // configure chart
     var config = {
-        type: 'scatter',
+        type: 'line',
         data: {
             labels: [],
             datasets: []
@@ -142,31 +142,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 intersect: true
             },
             scales: {
-                xAxes: [{
+                x: {
                     display: true,
                     scaleLabel: {
                         display: true,
                         labelString: 'Item'
                     },
-                    type:'linear'
-                }],
-                yAxes: [{
+                },
+                y: {
                     display: true,
-                    ticks: {
-                        beginAtZero: true
-                    },
                     scaleLabel: {
                         display: true,
                         labelString: 'Value'
                     }
-                }]
+                }
             }
         }
     };
 
     // define global Chart Options and create chart
-    Chart.defaults.global.defaultFontColor = 'grey';
-    Chart.defaults.global.defaultFontSize = 16;
+    Chart.defaults.defaultFontColor = 'grey';
+    Chart.defaults.defaultFontSize = 16;
 
     var chart = new Chart(ctx, config);
 });
