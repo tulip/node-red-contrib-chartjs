@@ -443,6 +443,49 @@ module.exports = function (RED) {
         });
     }
 
+    function chartjsScatter(config) {
+        RED.nodes.createNode(this, config);
+
+        var node = this;
+
+        // load default template
+        var template = fs.readFileSync(__dirname + '/templates/scatter-chart.html', 'utf8');
+
+        // configure chart node-red path
+        if (RED.settings.httpNodeRoot !== false) {
+            node.errorHandler = function (err, req, res, next) {
+                node.warn(err);
+
+                res.send(500);
+            };
+
+            node.callback = function (req, res) {
+                res.end(template);
+            }
+
+            node.corsHandler = function (req, res, next) {
+                next();
+            }
+        }
+
+        // update expressJS route and update node path
+        updatePath(node, config.path);
+
+        // save config channel
+        configs[config.path] = { title: config.charttitle, xaxis: config.xaxis, yaxis: config.yaxis, options: config.options };
+
+        // trigger on flow input
+        node.on('input', function (msg) {
+            // publish chart input message
+            var red = { msg: msg };
+
+            io.emit(config.path, red);
+
+            // return payload
+            node.send(msg);
+        });
+    }
+
     RED.nodes.registerType('chartjs-line', chartjsLine);
     RED.nodes.registerType('chartjs-vertical-bar', chartjsVerticalBar);
     RED.nodes.registerType('chartjs-horizontal-bar', chartjsHorizontalBar);
@@ -451,4 +494,5 @@ module.exports = function (RED) {
     RED.nodes.registerType('chartjs-polar', chartjsPolar);
     RED.nodes.registerType('chartjs-bubble', chartjsBubble);
     RED.nodes.registerType('chartjs-radar', chartjsRadar);
+    RED.nodes.registerType('chartjs-scatter', chartjsScatter);
 };
