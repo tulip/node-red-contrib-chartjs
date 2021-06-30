@@ -69,10 +69,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             config.options.scales['yAxes'][0].scaleLabel.labelString = red.config.yaxis;
             try {
                 let other_options = JSON.parse(red.config.options);
-                Object.entries(other_options).forEach(([key, value]) => {
-                    let new_value = _.merge(config.options[key], value)
-                    config.options[key]=new_value
-                });
+                let new_options = _.merge(config.options, other_options)
+                console.log("new options", new_options)
+                config.options = new_options
             }
             catch(err) {
                 console.log("Error parsing other options for chart:", err);
