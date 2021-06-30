@@ -147,7 +147,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     scaleLabel: {
                         display: true,
                         labelString: 'Item'
-                    }
+                    },
+                    type:'linear'
                 }],
                 yAxes: [{
                     display: true,
