@@ -73,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 if(red.config.options){
                     let other_options = JSON.parse(red.config.options);
                     let new_options = _.merge(config.options, other_options)
-                    console.log("new options", new_options)
                     config.options = new_options
                 }
             }
@@ -148,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         display: true,
                         labelString: 'Item'
                     },
+                    type: "linear"
                 },
                 y: {
                     display: true,
