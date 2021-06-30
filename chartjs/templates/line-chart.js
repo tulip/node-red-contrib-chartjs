@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // configure chart
     var config = {
-        type: 'scatter',
+        type: 'line',
         data: {
             labels: [],
             datasets: []
