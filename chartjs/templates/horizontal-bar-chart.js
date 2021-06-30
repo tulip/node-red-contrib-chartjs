@@ -49,11 +49,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // update chart configuration
         if (red.config !== undefined) {
             config.options.title.text = red.config.title;
-            config.options.scales['xAxes'][0].scaleLabel.labelString = red.config.xaxis;
-            config.options.scales['yAxes'][0].scaleLabel.labelString = red.config.yaxis;
+            config.options.scales.x.title.text = red.config.xaxis;
+            config.options.scales.y.title.text = red.config.yaxis;
             try {
-                let other_options = JSON.parse(red.config.options);
-                Object.entries(other_options).forEach(([key, value]) => config.options[key]=value);
+                if(red.config.options){
+                    let other_options = JSON.parse(red.config.options);
+                    let new_options = _.merge(config.options, other_options)
+                    config.options = new_options
+                }
             }
             catch(err) {
                 console.log("Error parsing other options for chart:", err);
@@ -120,30 +123,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 intersect: true
             },
             scales: {
-                xAxes: [{
+                x: {
                     display: true,
                     scaleLabel: {
                         display: true,
                         labelString: 'Item'
-                    }
-                }],
-                yAxes: [{
+                    },
+                },
+                y: {
                     display: true,
-                    ticks: {
-                        beginAtZero: true
-                    },                    
                     scaleLabel: {
                         display: true,
                         labelString: 'Value'
                     }
-                }]
-            }
+                }
+            },
+            indexAxis: 'y',
         }
     };
 
     // Global Chart Options
-    Chart.defaults.global.defaultFontColor = 'grey';
-    Chart.defaults.global.defaultFontSize = 16;
+    Chart.defaults.defaultFontColor = 'grey';
+    Chart.defaults.defaultFontSize = 16;
 
     var chart = new Chart(ctx, config);	
 });
