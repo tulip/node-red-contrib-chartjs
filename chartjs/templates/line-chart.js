@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             try {
                 let other_options = JSON.parse(red.config.options);
                 Object.entries(other_options).forEach(([key, value]) => {
-                    let new_value = _.merge(config.options[key], ...value)
+                    let new_value = _.merge(config.options[key], value)
                     config.options[key]=new_value
                 });
             }
