@@ -44,8 +44,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
             });
 
-            console.log("chart", chart)
-
             // refresh chart
             chart.update();
         }
