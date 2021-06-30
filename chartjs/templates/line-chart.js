@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     socket.on(topic, function(red){
         console.log(red);
 
+        console.log("test")
         // update chart dataset
         if (red.msg !== undefined) {
             if (!Array.isArray(red.msg.payload)) {
