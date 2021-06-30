@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // update chart configuration
         if (red.config !== undefined) {
             config.options.title.text = red.config.title;
-            config.options.scales['xAxes'][0].scaleLabel.labelString = red.config.xaxis;
-            config.options.scales['yAxes'][0].scaleLabel.labelString = red.config.yaxis;
+            config.options.scales.x.title.text = red.config.xaxis;
+            config.options.scales.y.title.text = red.config.yaxis;
             try {
                 if(red.config.options){
                     let other_options = JSON.parse(red.config.options);
