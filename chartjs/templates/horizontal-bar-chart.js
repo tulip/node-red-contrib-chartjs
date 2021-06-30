@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var ctx = canvas.getContext('2d');
 
     var config = {
-        type: 'horizontalBar',
+        type: 'bar',
         data: {
             labels: [],
             datasets: []
