@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             maintainAspectRatio: false,
             title: {
                 display: true,
-                text: 'Scatter Chart'
+                text: 'Line Chart'
             },
             tooltips: {
                 mode: 'index',
