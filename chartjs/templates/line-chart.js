@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
               chart.config.data.datasets.push(dataset);
             });
 
+            console.log("chart", chart)
+
             // refresh chart
             chart.update();
         }
