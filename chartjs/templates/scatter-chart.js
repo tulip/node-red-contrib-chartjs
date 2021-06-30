@@ -31,17 +31,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
               red.msg.payload = payload;
             }
 
-            // initialize graph labels datasets
-            // NOTES: the several series must have the same x axis distribution
-            // get the first serial x axis
-            chart.config.data.labels = [];
-
-            red.msg.payload[0].dataset.forEach(item => {
-                chart.config.data.labels.push(item.x);
-            });
-
-            chart.config.data.datasets = [];
-
             red.msg.payload.forEach((serie, i) => {
               var dataset = {
                   label: serie.channel,
@@ -51,11 +40,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                   fill: false
               };
 
-              serie.dataset.forEach(item => {                  
-                  dataset.data.push(item.y);
-              });
+              chart.config.data = serie.dataset;
 
-              chart.config.data.datasets.push(dataset);
             });
 
             // refresh chart
@@ -118,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // configure chart
     var config = {
-        type: 'line',
+        type: 'scatter',
         data: {
             labels: [],
             datasets: []
