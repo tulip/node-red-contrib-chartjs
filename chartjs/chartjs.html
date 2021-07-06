@@ -84,7 +84,7 @@
             charttitle: {value: 'Chart title'},
             xaxis: {value: 'Item'},
             yaxis: {value: 'Value'},
-            options: {value: ''}
+            options: {value: '{}'}
         },
         outputs: 1,
         inputs: 1,
@@ -185,7 +185,7 @@
             charttitle: {value: 'Chart title'},
             xaxis: {value: 'Item'},
             yaxis: {value: 'Value'},
-            options: {value: ''}
+            options: {value: '{}'}
         },
         outputs: 1,
         inputs: 1,
@@ -193,7 +193,13 @@
             return this.name || "Vertical Bar Chartjs";
         },
         color: 'orange',
-        icon: 'bar_vertical_chart.png'
+        icon: 'bar_vertical_chart.png',
+        oneditprepare: () => {
+          $("#node-input-options").typedInput({
+            type:"json",
+            types:["json"]
+          });
+        }
     });
 </script>
 
@@ -280,7 +286,7 @@
             charttitle: {value: 'Chart title'},
             xaxis: {value: 'Item'},
             yaxis: {value: 'Value'},
-            options: {value: ''}
+            options: {value: '{}'}
         },
         outputs: 1,
         inputs: 1,
@@ -288,7 +294,13 @@
             return this.name || "Bar Chartjs";
         },
         color: 'orange',
-        icon: 'bar_horizontal_chart.png'
+        icon: 'bar_horizontal_chart.png',
+        oneditprepare: () => {
+          $("#node-input-options").typedInput({
+            type:"json",
+            types:["json"]
+          });
+        }
     });
 </script>
 
@@ -376,7 +388,7 @@
             charttitle: {value: 'Chart title'},
             xaxis: {value: 'Item'},
             yaxis: {value: 'Value'},
-            options: {value: ''}
+            options: {value: '{}'}
         },
         outputs: 1,
         inputs: 1,
@@ -384,7 +396,13 @@
             return this.name || "Pie Chartjs";
         },
         color: 'orange',
-        icon: 'pie_chart.png'
+        icon: 'pie_chart.png',
+        oneditprepare: () => {
+          $("#node-input-options").typedInput({
+            type:"json",
+            types:["json"]
+          });
+        }
     });
 </script>
 
@@ -472,7 +490,7 @@
             charttitle: {value: 'Chart title'},
             xaxis: {value: 'Item'},
             yaxis: {value: 'Value'},
-            options: {value: ''}
+            options: {value: '{}'}
         },
         outputs: 1,
         inputs: 1,
@@ -480,7 +498,13 @@
             return this.name || "Doughnut Chartjs";
         },
         color: 'orange',
-        icon: 'doughnut_chart.png'
+        icon: 'doughnut_chart.png',
+        oneditprepare: () => {
+          $("#node-input-options").typedInput({
+            type:"json",
+            types:["json"]
+          });
+        }
     });
 </script>
 
@@ -568,7 +592,7 @@
             charttitle: {value: 'Polar Area title'},
             xaxis: {value: 'Item'},
             yaxis: {value: 'Value'},
-            options: {value: ''}
+            options: {value: '{}'}
         },
         outputs: 1,
         inputs: 1,
@@ -576,7 +600,13 @@
             return this.name || "Polar Area Chartjs";
         },
         color: 'orange',
-        icon: 'polar_chart.png'
+        icon: 'polar_chart.png',
+        oneditprepare: () => {
+          $("#node-input-options").typedInput({
+            type:"json",
+            types:["json"]
+          });
+        }
     });
 </script>
 
@@ -664,7 +694,7 @@
             charttitle: {value: 'Chart title'},
             xaxis: {value: 'Item'},
             yaxis: {value: 'Value'},
-            options: {value: ''}
+            options: {value: '{}'}
         },
         outputs: 1,
         inputs: 1,
@@ -672,7 +702,13 @@
             return this.name || "Bubble Chartjs";
         },
         color: 'orange',
-        icon: 'bubble_chart.png'
+        icon: 'bubble_chart.png',
+        oneditprepare: () => {
+          $("#node-input-options").typedInput({
+            type:"json",
+            types:["json"]
+          });
+        }
     });
 </script>
 
@@ -759,7 +795,7 @@
             charttitle: {value: 'Chart title'},
             xaxis: {value: 'Item'},
             yaxis: {value: 'Value'},
-            options: {value: ''}
+            options: {value: '{}'}
         },
         outputs: 1,
         inputs: 1,
@@ -767,6 +803,12 @@
             return this.name || "Radar Chartjs";
         },
         color: 'orange',
-        icon: 'radar_chart.png'
+        icon: 'radar_chart.png',
+        oneditprepare: () => {
+          $("#node-input-options").typedInput({
+            type:"json",
+            types:["json"]
+          });
+        }
     });
 </script>
