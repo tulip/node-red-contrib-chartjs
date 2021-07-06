@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     let other_options = JSON.parse(red.config.options);
                     let new_options = _.merge(config.options, other_options)
                     config.options = new_options
-                    console.log(new_options);
                 }
             }
             catch(err) {
