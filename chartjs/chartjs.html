@@ -92,7 +92,13 @@
             return this.name || "Line Chartjs";
         },
         color: 'orange',
-        icon: 'line_chart.png'
+        icon: 'line_chart.png',
+        oneditprepare: () => {
+          $("#node-input-options").typedInput({
+            type:"json",
+            types:["json"]
+          });
+        }
     });
 </script>
 

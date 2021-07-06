@@ -110,6 +110,7 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config);
 
         var node = this;
+        console.log(config);
 
         // load default template
         var template = fs.readFileSync(__dirname + '/templates/line-chart.html', 'utf8');

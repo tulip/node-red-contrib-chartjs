@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         // update chart configuration
         if (red.config !== undefined) {
-            config.options.title.text = red.config.title;
+            config.options.plugins.title.text = red.config.title;
             config.options.scales.x.title.text = red.config.xaxis;
             config.options.scales.y.title.text = red.config.yaxis;
             try {
@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     let other_options = JSON.parse(red.config.options);
                     let new_options = _.merge(config.options, other_options)
                     config.options = new_options
+                    console.log(new_options);
                 }
             }
             catch(err) {
@@ -128,9 +129,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            title: {
-                display: true,
-                text: 'Line Chart'
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Line Chart'
+                }
             },
             tooltips: {
                 mode: 'index',
@@ -143,17 +146,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
             scales: {
                 x: {
                     display: true,
-                    scaleLabel: {
+                    title: {
                         display: true,
-                        labelString: 'Item'
+                        text: 'Item'
                     },
                     type: "linear"
                 },
                 y: {
                     display: true,
-                    scaleLabel: {
+                    title: {
                         display: true,
-                        labelString: 'Value'
+                        text: 'Value'
                     }
                 }
             }
