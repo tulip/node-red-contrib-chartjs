@@ -1,8 +1,8 @@
-# @tulip/node-red-contrib-chartjs
+# node-red-contrib-chartjs3
 
 A Node-RED node to provide charts for plotting things on. Implemented by Chart.js.
 
-This node is forked from masalinas/node-red-contrib-chartjs, and has been updated to Chart.js 3.4, and to include dynamic chart options.
+This node is forked from masalinas/node-red-contrib-chartjs, and has been updated to Chart.js 3.4, and to include configurable & dynamic chart options.
 
 ![Charts RED Dashboards](https://user-images.githubusercontent.com/1216181/52432061-cddca400-2b09-11e9-9b83-f6cdae1a75b5.png)
 

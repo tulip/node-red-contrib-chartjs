@@ -1,5 +1,5 @@
 {
-  "name": "@tulip/node-red-contrib-chartjs",
+  "name": "node-red-contrib-chartjs3",
   "version": "0.0.1",
   "description": "Node-RED Chart.js node",
   "scripts": {
@@ -12,7 +12,9 @@
   ],
   "author": "Miguel Salinas",
   "contributors": [
-    "Andres Carmona"
+    "Andres Carmona",
+    "Nan Zhao",
+    "Kathy Camenzind"
   ],
   "license": "Apache License, Version 2.0",
   "dependencies": {
